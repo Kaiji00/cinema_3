@@ -27,6 +27,9 @@ public class SpringContextTest {
     @Autowired
     protected MockMvc mockMvc;
 
+
+
+
     @Autowired
     protected ObjectMapper objectMapper;
 

@@ -16,7 +16,6 @@ public interface CollectionCategoryService {
     CollectionCategories updateCollectionCategories(Long id, String name);
 
 
-
     void createCollectionCategories(CollectionCategories collectionCategories);
 
     boolean isCollectionCategoriesExistsById(Long id);

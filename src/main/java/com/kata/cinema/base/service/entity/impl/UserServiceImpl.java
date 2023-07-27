@@ -8,7 +8,12 @@ import com.kata.cinema.base.repository.RoleRepository;
 import com.kata.cinema.base.repository.UserRepository;
 import com.kata.cinema.base.service.entity.UserService;
 import lombok.RequiredArgsConstructor;
+import org.mockito.internal.stubbing.answers.ThrowsException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
 import java.util.Set;
 
@@ -66,4 +71,5 @@ public class UserServiceImpl implements UserService {
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
 }

@@ -12,6 +12,7 @@ import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Hibernate;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Objects;
 
@@ -19,7 +20,7 @@ import java.util.Objects;
 @Table(name = "roles")
 @Getter
 @Setter
-public class Role {
+public class Role implements GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -43,5 +44,10 @@ public class Role {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    @Override
+    public String getAuthority() {
+        return name.name();
     }
 }
